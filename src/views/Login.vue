@@ -37,7 +37,7 @@ async function handleSubmit() {
       <form @submit.prevent="handleSubmit" class="space-y-4">
         <div>
           <label class="text-sm font-medium text-gray-700 block mb-1">Email</label>
-          <input v-model="email" type="email" required placeholder="anda@contoh.com"
+          <input v-model="email" type="email" required placeholder="Masukan alamat email"
             class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-leaf focus:ring-2 focus:ring-mint outline-none transition" />
         </div>
         <div>
