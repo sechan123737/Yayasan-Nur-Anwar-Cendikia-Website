@@ -15,7 +15,7 @@ function formatRupiah(n) {
 </script>
 
 <template>
-  <section id="donate" class="py-24 bg-white scroll-mt-20">
+  <section id="donate" class="py-16 bg-white scroll-mt-20">
     <div class="max-w-7xl mx-auto px-6">
       <div class="relative overflow-hidden rounded-3xl gradient-overlay pattern-bg p-12 md:p-16 text-center text-white">
         <h2 class="font-display text-3xl md:text-5xl font-bold mb-4">Buat Perbedaan Hari Ini</h2>

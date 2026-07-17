@@ -29,6 +29,7 @@ async function handleLogout() {
         <router-link to="/#about" class="hover:text-forest transition-colors">Tentang</router-link>
         <router-link to="/#impact" class="hover:text-forest transition-colors">Dampak</router-link>
         <router-link to="/#programs" class="hover:text-forest transition-colors">Program</router-link>
+        <router-link to="/berita" class="hover:text-forest transition-colors">Berita</router-link>
         <router-link to="/#donate" class="hover:text-forest transition-colors">Donasi</router-link>
 
         <router-link v-if="isAdmin" to="/admin" class="hover:text-forest transition-colors">Panel Admin</router-link>
@@ -52,6 +53,7 @@ async function handleLogout() {
       <router-link to="/#about" class="block text-gray-600 hover:text-forest py-1" @click="mobileOpen = false">Tentang</router-link>
       <router-link to="/#impact" class="block text-gray-600 hover:text-forest py-1" @click="mobileOpen = false">Dampak</router-link>
       <router-link to="/#programs" class="block text-gray-600 hover:text-forest py-1" @click="mobileOpen = false">Program</router-link>
+      <router-link to="/berita" class="block text-gray-600 hover:text-forest py-1" @click="mobileOpen = false">Berita</router-link>
       <router-link to="/#donate" class="block text-gray-600 hover:text-forest py-1" @click="mobileOpen = false">Donasi</router-link>
       <router-link v-if="isAdmin" to="/admin" class="block text-gray-600 hover:text-forest py-1" @click="mobileOpen = false">Panel Admin</router-link>
 

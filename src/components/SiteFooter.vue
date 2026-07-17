@@ -27,8 +27,8 @@ const year = new Date().getFullYear()
         <div>
           <h4 class="font-semibold mb-4 text-white/90">Hubungi Kami</h4>
           <ul class="space-y-2 text-sm text-white/60">
-            <li class="flex items-center gap-2">info@nuranwar.org</li>
-            <li class="flex items-center gap-2">+62 21 555 0123</li>
+            <li class="flex items-center gap-2">nur.anwar.cendikia@gmail.com</li>
+            <li class="flex items-center gap-2">+62 822 7777 2061</li>
             <li class="flex items-center gap-2">Jakarta, Indonesia</li>
           </ul>
         </div>

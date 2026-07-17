@@ -26,6 +26,16 @@ const routes = [
     meta: { requiresAuth: true }
   },
   {
+    path: '/berita',
+    name: 'news',
+    component: () => import('../views/News.vue')
+  },
+  {
+    path: '/berita/:slug',
+    name: 'news-detail',
+    component: () => import('../views/NewsDetail.vue')
+  },
+  {
     path: '/admin',
     name: 'admin',
     component: () => import('../views/Admin.vue'),

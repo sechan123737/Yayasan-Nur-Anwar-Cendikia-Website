@@ -1,9 +1,9 @@
 <script setup>
 const stats = [
-  { value: '12.500+', label: 'Siswa Teredukasi' },
-  { value: '85', label: 'Sekolah Dibangun' },
-  { value: '3.200+', label: 'Member Aktif' },
-  { value: '24', label: 'Provinsi Tercakup' }
+  { value: '0', label: 'Siswa Teredukasi' },
+  { value: '0', label: 'Sekolah Dibangun' },
+  { value: '0', label: 'Member Aktif' },
+  { value: '0', label: 'Provinsi Tercakup' }
 ]
 </script>
 
