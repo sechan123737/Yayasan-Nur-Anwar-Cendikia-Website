@@ -21,7 +21,7 @@ async function handleLogout() {
         <img src="/images/Logo.png" alt="Logo Yayasan Nur Anwar Cendikia" class="w-10 h-10 rounded-full object-cover" />
         <div>
           <span class="font-display font-bold text-forest text-lg leading-tight block">Nur Anwar Cendikia</span>
-          <span class="text-xs text-leaf font-medium tracking-wider uppercase">Foundation</span>
+          <span class="text-xs text-leaf font-medium tracking-wider uppercase">Yayasan</span>
         </div>
       </router-link>
 
