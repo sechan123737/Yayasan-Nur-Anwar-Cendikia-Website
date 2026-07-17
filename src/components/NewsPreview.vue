@@ -13,7 +13,7 @@ async function fetchLatestNews() {
   loading.value = true
   const { data, error } = await supabase
     .from('news')
-    .select('id, title, slug, category, summary, image_url, created_at')
+    .select('id, title, slug, category, summary, image_url, image_position, created_at')
     .order('created_at', { ascending: false })
     .limit(5)
 
@@ -91,7 +91,8 @@ onUnmounted(stopAutoplay)
 
       <div v-if="loading" class="text-center text-gray-400 py-8">Memuat berita...</div>
 
-      <div v-else class="relative select-none max-w-5xl mx-auto">
+      <!-- max-w-3xl di sini yang mengatur LEBAR carousel, terpisah dari lebar section (max-w-7xl) -->
+      <div v-else class="relative select-none max-w-3xl mx-auto">
         <!-- Viewport: satu slide penuh berbentuk persegi panjang (landscape) -->
         <div
           class="overflow-hidden rounded-3xl cursor-grab active:cursor-grabbing"
@@ -113,18 +114,18 @@ onUnmounted(stopAutoplay)
               v-for="n in news"
               :key="n.id"
               :to="`/berita/${n.slug}`"
-              class="w-full shrink-0 grid md:grid-cols-2 bg-cream border border-green-50 rounded-3xl overflow-hidden h-64 md:h-72"
+              class="w-full shrink-0 grid md:grid-cols-2 bg-cream border border-green-50 rounded-3xl overflow-hidden h-48 md:h-64"
               @click.capture="dragOffset !== 0 && $event.preventDefault()"
             >
               <div class="h-full bg-gradient-to-br from-forest to-leaf flex items-center justify-center order-2 md:order-1">
-                <img v-if="n.image_url" :src="n.image_url" class="w-full h-full object-cover" alt="" draggable="false" />
+                <img v-if="n.image_url" :src="n.image_url" :style="{ objectPosition: n.image_position || '50% 50%' }" class="w-full h-full object-cover" alt="" draggable="false" />
               </div>
               <div class="p-5 md:p-6 flex flex-col justify-center order-1 md:order-2">
                 <p v-if="n.category" class="text-xs uppercase tracking-wider text-leaf font-semibold mb-1">{{ n.category }}</p>
                 <p class="text-gray-400 text-xs mb-2">{{ formatDate(n.created_at) }}</p>
                 <h3 class="font-display font-bold text-lg md:text-xl text-forest mb-2 leading-snug">{{ n.title }}</h3>
                 <p class="text-gray-500 text-sm leading-relaxed line-clamp-2">{{ n.summary }}</p>
-            </div>
+              </div>
             </router-link>
           </div>
         </div>

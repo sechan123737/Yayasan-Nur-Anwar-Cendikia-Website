@@ -11,7 +11,7 @@ async function fetchNews() {
   errorMsg.value = ''
   const { data, error } = await supabase
     .from('news')
-    .select('id, title, slug, category, summary, image_url, created_at')
+    .select('id, title, slug, category, summary, image_url, image_position, created_at')
     .order('created_at', { ascending: false })
 
   if (error) {
@@ -50,7 +50,7 @@ onMounted(fetchNews)
           class="card-hover block bg-white rounded-3xl overflow-hidden border border-green-50 shadow-sm"
         >
           <div class="h-48 bg-gradient-to-br from-forest to-leaf flex items-center justify-center">
-            <img v-if="n.image_url" :src="n.image_url" class="w-full h-full object-cover" alt="" />
+            <img v-if="n.image_url" :src="n.image_url" :style="{ objectPosition: n.image_position || '50% 50%' }" class="w-full h-full object-cover" alt="" />
           </div>
           <div class="p-8">
             <p v-if="n.category" class="text-xs uppercase tracking-wider text-leaf font-semibold mb-2">{{ n.category }}</p>

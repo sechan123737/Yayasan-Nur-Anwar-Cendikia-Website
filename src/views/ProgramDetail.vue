@@ -42,7 +42,7 @@ watch(() => route.params.slug, (slug) => fetchProgram(slug))
 
       <article v-else-if="program" class="bg-white rounded-3xl shadow-sm border border-green-50 overflow-hidden">
         <div class="h-64 bg-gradient-to-br from-forest to-leaf flex items-center justify-center">
-          <img v-if="program.image_url" :src="program.image_url" class="w-full h-full object-cover" alt="" />
+          <img v-if="program.image_url" :src="program.image_url" :style="{ objectPosition: program.image_position || '50% 50%' }" class="w-full h-full object-cover" alt="" />
           <img v-else src="/images/Programs.png" class="w-20 h-20 object-contain opacity-90" alt="" />
         </div>
         <div class="p-8 md:p-10">

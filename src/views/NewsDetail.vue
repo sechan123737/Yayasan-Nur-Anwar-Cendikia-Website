@@ -45,7 +45,7 @@ watch(() => route.params.slug, (slug) => fetchArticle(slug))
 
       <article v-else-if="article" class="bg-white rounded-3xl shadow-sm border border-green-50 overflow-hidden">
         <div class="h-64 bg-gradient-to-br from-forest to-leaf flex items-center justify-center">
-          <img v-if="article.image_url" :src="article.image_url" class="w-full h-full object-cover" alt="" />
+          <img v-if="article.image_url" :src="article.image_url" :style="{ objectPosition: article.image_position || '50% 50%' }" class="w-full h-full object-cover" alt="" />
         </div>
         <div class="p-8 md:p-10">
           <p v-if="article.category" class="text-xs uppercase tracking-wider text-leaf font-semibold mb-3">{{ article.category }}</p>

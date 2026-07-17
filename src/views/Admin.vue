@@ -42,7 +42,8 @@ const emptyForm = {
   category: '',
   summary: '',
   content: '',
-  image_url: ''
+  image_url: '',
+  image_position: '50% 50%'
 }
 const form = ref({ ...emptyForm })
 
@@ -103,7 +104,8 @@ function openEditForm(p) {
     category: p.category || '',
     summary: p.summary || '',
     content: p.content || '',
-    image_url: p.image_url || ''
+    image_url: p.image_url || '',
+    image_position: p.image_position || '50% 50%'
   }
   editingId.value = p.id
   showForm.value = true
@@ -204,14 +206,13 @@ onMounted(fetchItems)
                 class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-leaf focus:ring-2 focus:ring-mint outline-none transition" />
             </div>
           </div>
-          <div class="grid md:grid-cols-2 gap-4">
-            <div>
-              <label class="text-sm font-medium text-gray-700 block mb-1">Kategori</label>
-              <input v-model="form.category" type="text" placeholder="Kegiatan"
-                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-leaf focus:ring-2 focus:ring-mint outline-none transition" />
-            </div>
-            <ImageUploader v-model="form.image_url" />
+          <div>
+            <label class="text-sm font-medium text-gray-700 block mb-1">Kategori</label>
+            <input v-model="form.category" type="text" placeholder="Kegiatan"
+              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-leaf focus:ring-2 focus:ring-mint outline-none transition" />
           </div>
+
+          <ImageUploader v-model="form.image_url" v-model:position="form.image_position" />
           <div>
             <label class="text-sm font-medium text-gray-700 block mb-1">Ringkasan (tampil di halaman publik)</label>
             <textarea v-model="form.summary" required rows="2" placeholder="Ringkasan singkat..."

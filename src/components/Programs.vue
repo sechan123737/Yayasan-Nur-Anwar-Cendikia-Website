@@ -72,7 +72,7 @@ onMounted(fetchPrograms)
             class="h-48 flex items-center justify-center bg-gradient-to-br"
             :class="gradients[i % gradients.length]"
           >
-            <img v-if="p.image_url" :src="p.image_url" class="w-full h-full object-cover" alt="" />
+            <img v-if="p.image_url" :src="p.image_url" :style="{ objectPosition: p.image_position || '50% 50%' }" class="w-full h-full object-cover" alt="" />
             <img v-else src="/images/Programs.png" class="w-16 h-16 object-contain opacity-90" alt="" />
           </div>
           <div class="p-8">
